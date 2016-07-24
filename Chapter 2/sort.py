@@ -1,46 +1,46 @@
 
-def insertion_sort(sequence):
+def insertion_sort(A):
     """ Return the sequence with elements ascending.
 
         In-place insertion sort.
     """
-    for j in range(1, len(sequence)):
-        key = sequence[j]
+    for j in range(1, len(A)):
+        key = A[j]
         i = j - 1
-        while i >= 0 and key < sequence[i]:
-            sequence[i+1] = sequence[i]
+        while i >= 0 and key < A[i]:
+            A[i+1] = A[i]
             i -= 1
-        sequence[i+1] = key
-    return sequence
+        A[i+1] = key
+    return A
 
 
-def reverse_insertion_sort(sequence):
+def reverse_insertion_sort(A):
     """ Return the sequence with elements descending.
 
         In-place reverse insertion sort.
     """
-    for j in range(1, len(sequence)):
-        key = sequence[j]
+    for j in range(1, len(A)):
+        key = A[j]
         i = j - 1
-        while i >= 0 and key > sequence[i]:
-            sequence[i+1] = sequence[i]
+        while i >= 0 and key > A[i]:
+            A[i+1] = A[i]
             i -= 1
-        sequence[i+1] = key
-    return sequence
+        A[i+1] = key
+    return A
 
 
-def selection_sort(sequence):
+def selection_sort(A):
     """ Return the sequence with elements ascending.
 
         In-place selection sort.
     """
-    for i in range(0, len(sequence)-1):
+    for i in range(0, len(A)-1):
         j = i
-        for k in range(i+1, len(sequence)):
-            if sequence[k] < sequence[j]:
+        for k in range(i+1, len(A)):
+            if A[k] < A[j]:
                 j = k
         if j != i:
-            key = sequence[i]
-            sequence[i] = sequence[j]
-            sequence[j] = key
-    return sequence
+            key = A[i]
+            A[i] = A[j]
+            A[j] = key
+    return A
