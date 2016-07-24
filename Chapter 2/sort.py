@@ -68,3 +68,36 @@ def merge_sort(A, p=None, r=None):
         merge_sort(A, p, q)
         merge_sort(A, q+1, r)
         merge(A, p, q, r)
+
+
+if __name__ == "__main__":
+    import copy
+    import random
+    print("Generating random sequence of 100 numbers and expected sort..."),
+    original = [random.randint(0, 100) for _ in range(100)]
+    expected = sorted(original)
+    print("Done")
+
+    print("Testing insertion_sort..."),
+    sequence = copy.deepcopy(original)
+    insertion_sort(sequence)
+    assert sequence == expected
+    print("Passed")
+
+    print("Testing reverse_insertion_sort..."),
+    sequence = copy.deepcopy(original)
+    reverse_insertion_sort(sequence)
+    assert sequence == sorted(original, reverse=True)
+    print("Passed")
+
+    print("Testing selection_sort..."),
+    sequence = copy.deepcopy(original)
+    selection_sort(sequence)
+    assert sequence == expected
+    print("Passed")
+
+    print("Testing merge_sort..."),
+    sequence = copy.deepcopy(original)
+    merge_sort(sequence)
+    assert sequence == expected
+    print("Passed")
