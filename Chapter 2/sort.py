@@ -27,3 +27,20 @@ def reverse_insertion_sort(sequence):
             i -= 1
         sequence[i+1] = key
     return sequence
+
+
+def selection_sort(sequence):
+    """ Return the sequence with elements ascending.
+
+        In-place selection sort.
+    """
+    for i in range(0, len(sequence)-1):
+        j = i
+        for k in range(i+1, len(sequence)):
+            if sequence[k] < sequence[j]:
+                j = k
+        if j != i:
+            key = sequence[i]
+            sequence[i] = sequence[j]
+            sequence[j] = key
+    return sequence
