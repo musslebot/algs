@@ -3,7 +3,7 @@ import math
 
 
 def insertion_sort(A):
-    """ Modify a sequence, in place, such that its elements are in ascending order.
+    """ Put a sequence's elements in ascending order, using insertion sort.
     """
     for j in range(1, len(A)):
         key = A[j]
@@ -15,7 +15,7 @@ def insertion_sort(A):
 
 
 def reverse_insertion_sort(A):
-    """ Modify a sequence, in place, such that its elements are in descending order.
+    """ Put a sequence's elements in descending order, using insertion sort.
     """
     for j in range(1, len(A)):
         key = A[j]
@@ -27,7 +27,7 @@ def reverse_insertion_sort(A):
 
 
 def selection_sort(A):
-    """ Modify a sequence, in place, such that its elements are in ascending order.
+    """ Put a sequence's elements in ascending order, using selection sort.
     """
     for i in range(0, len(A)-1):
         j = i
@@ -41,10 +41,10 @@ def selection_sort(A):
 
 
 def merge_sort(A, p=None, r=None):
-    """ Modify a sequence, in place, such that its elements are in ascending order.
+    """ Put a sequence's elements in ascending order, using merge sort.
     """
     def merge(A, p, q, r):
-        """ Merge two subsequences of a sequence (defined by indices p, q, and r) in place.
+        """ Merge two subsequences (defined by indices p, q, and r) into a sequence.
         """
         # Define subsequences
         L = A[p:q+1] + [float("inf")]
