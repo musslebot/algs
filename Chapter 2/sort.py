@@ -3,9 +3,7 @@ import math
 
 
 def insertion_sort(A):
-    """ Return the sequence with elements ascending.
-
-        In-place insertion sort.
+    """ Modify a sequence, in place, such that its elements are in ascending order.
     """
     for j in range(1, len(A)):
         key = A[j]
@@ -14,13 +12,10 @@ def insertion_sort(A):
             A[i+1] = A[i]
             i -= 1
         A[i+1] = key
-    return A
 
 
 def reverse_insertion_sort(A):
-    """ Return the sequence with elements descending.
-
-        In-place reverse insertion sort.
+    """ Modify a sequence, in place, such that its elements are in descending order.
     """
     for j in range(1, len(A)):
         key = A[j]
@@ -29,13 +24,10 @@ def reverse_insertion_sort(A):
             A[i+1] = A[i]
             i -= 1
         A[i+1] = key
-    return A
 
 
 def selection_sort(A):
-    """ Return the sequence with elements ascending.
-
-        In-place selection sort.
+    """ Modify a sequence, in place, such that its elements are in ascending order.
     """
     for i in range(0, len(A)-1):
         j = i
@@ -46,18 +38,13 @@ def selection_sort(A):
             key = A[i]
             A[i] = A[j]
             A[j] = key
-    return A
 
 
 def merge_sort(A, p=None, r=None):
-    """ Return the sequence with elements ascending.
-
-        In-place merge sort.
+    """ Modify a sequence, in place, such that its elements are in ascending order.
     """
     def merge(A, p, q, r):
-        """ Return merged sequence of two subsequences.
-
-            In-place modification of sequence.
+        """ Merge two subsequences of a sequence (defined by indices p, q, and r) in place.
         """
         # Define subsequences
         L = A[p:q+1] + [float("inf")]
@@ -72,7 +59,6 @@ def merge_sort(A, p=None, r=None):
             else:
                 A[k] = R[j]
                 j += 1
-        return A
     if p is None:
         p = 0
     if r is None:
@@ -82,4 +68,3 @@ def merge_sort(A, p=None, r=None):
         merge_sort(A, p, q)
         merge_sort(A, q+1, r)
         merge(A, p, q, r)
-    return A
