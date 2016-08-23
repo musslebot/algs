@@ -59,6 +59,25 @@ def find_maximum_subarray_divide_and_conquer(A, low, high):
             return cross_low, cross_high, cross_sum
 
 
+def find_maximum_subarray_linear(A, low, high):
+    """ Return the maximum subarray using a non-recursive, linear algorithm.
+    """
+    max_low = 0
+    max_high = 0
+    max_sum = float("-inf")
+    temp_sum = 0
+    temp_low = 0
+    for i in range(low, high):
+        temp_sum = max(A[i], temp_sum + A[i])
+        if temp_sum > max_sum:
+            max_sum = temp_sum
+            max_high = i
+            max_low = temp_low
+        if temp_sum == A[i]:
+            temp_low = i
+    return max_low, max_high, max_sum
+
+
 if __name__ == "__main__":
     original = [
         13, -3, -25, 20,
@@ -74,4 +93,8 @@ if __name__ == "__main__":
 
     print("Testing find_maximum_subarray_divide_and_conquer..."),
     assert find_maximum_subarray_divide_and_conquer(original, 0, len(original)-1) == expected
+    print("Passed")
+
+    print("Testing finx_maximum_subarray_linear..."),
+    assert find_maximum_subarray_linear(original, 0, len(original)) == expected
     print("Passed")
